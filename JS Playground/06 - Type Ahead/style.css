@@ -2,7 +2,7 @@ html {
   box-sizing: border-box;
   background: #ffc600;
   font-family: 'helvetica neue';
-  font-size: 20px;
+  font-size: 15px;
   font-weight: 200;
 }
 
@@ -31,7 +31,7 @@ input.search {
   top: 10px;
   z-index: 2;
   border-radius: 5px;
-  font-size: 40px;
+  font-size: 20px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.12), inset 0 0 2px rgba(0, 0, 0, 0.19);
 }
 
@@ -66,7 +66,11 @@ input.search {
 }
 
 span.population {
-  font-size: 15px;
+  font-size: 12px;
+}
+
+span.rating {
+  font-size: 12px;
 }
 
 .hl {

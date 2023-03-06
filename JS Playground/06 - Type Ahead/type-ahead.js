@@ -28,6 +28,7 @@ const prom = fetch(endpoint)
           <li>
           <span class="name">${cityName}, ${stateName}</span>
           <span class="population">${numberWithCommas(place.population)}</span>
+          <span class="rank">Ranking: ${place.rank}</span>
           </li>
           `;
         }).join("");
@@ -39,3 +40,5 @@ const suggestions = document.querySelector('.suggestions');
 
 searchInput.addEventListener('change', displayMatches);
 searchInput.addEventListener('keyup', displayMatches);
+
+console.log(cities)
