@@ -23,14 +23,14 @@ const isAdult = people.some(function(person) {
   return true
   }
 });
-console.log(isAdult)
+// console.log(isAdult)
 
 // Simplified
 const isMan = people.some(person => {
   const currentYear = (new Date()).getFullYear();
   return currentYear - person.year >= 19;
 })
-console.log(isMan)
+// console.log(isMan)
 
 // Fully simplified arrow function
 const isMan2 = people.some(person => ((new Date()).getFullYear()) - person.year >= 19);
@@ -39,11 +39,25 @@ const isMan2 = people.some(person => ((new Date()).getFullYear()) - person.year 
 
 const allAdults = people.every(person => ((new Date()).getFullYear()) - person.year >= 19);
 
-console.log(allAdults)
+// console.log(allAdults)
 
 // Array.prototype.find()
 // Find is like filter, but instead returns just the one you are looking for
 // find the comment with the ID of 823423
+
+const findComment = comments.find(comment => comment.id === "823423");
+
+// console.log(findComment);
+
+const findText = comments.find(comment => {
+  // if (comment.id === "823423") {
+  //   return comments.text
+  // }
+  // console.log(comment.id == "823423")
+});
+
+// console.log(findText)
+
 
 // Array.prototype.findIndex()
 // Find the comment with this ID
