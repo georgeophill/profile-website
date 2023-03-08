@@ -15,5 +15,87 @@
 			<p>Interests: Technology, Music, reading</p>
 		</div>
 	</div>
+
+  <script>
+    class HashTable {
+      constructor(size){
+        this.data = new Array(size);
+      }
+
+      _hash(key) {
+        let hash = 0 ;
+        for (let i = 0; i < key.length; i++){
+          hash = (hash + key.charCodeAt(i) * i) %
+          this.data.length
+        }
+        return hash;
+      }
+
+      set(key, value) {
+        let address = this._hash(key);
+        if(!this.data[address]){
+          this.data[address] = [];
+        }
+        this.data[address].push([key,value])
+        return this.data
+      }
+      set(key) {
+
+      }
+      keys() {
+        const keysArray = [];
+        for (let i=0; i < this.data.length; i++) {
+          if(this.data[i]) {
+            keysArray.push(this.data[i][0])
+          }
+        }
+        return keysArray;
+      }
+    }
+
+    const myHashTable = new HashTable(2);
+    myHashTable.set('grapes', 10000);
+    myHashTable.set('apples', 53);
+    myHashTable.set('oranges', 4);
+
+    // console.table(myHashTable);
+
+
+    var arr = [ 2,3,4,5,2,6,6,7,];
+    for (var i = 0; i < arr.length - 1; i++) {
+      if (arr.indexOf(arr[i], i + 1) > -1) {
+        console.log("index:", i, "value:", arr[i]);
+      }
+    }
+
+    function firstRecurringCharacter(input) {
+      for (let i = 0; i < input.length; i++) {
+        for (let j = i + 1; j < input.length; j++) {
+          if ( input[i] === input[j]) {
+            return input[i]
+          }
+        }
+      }
+      return undefined
+    }
+    // console.log(firstRecurringCharacter([1,2,3,45,6]))
+
+
+    function firstRecurringCharacter2(input) {
+      let map = {};
+      for ( i = 0; i < input.length; i++) {
+        if(map[input[i]] !== undefined) {
+          return input[i]
+        } else {
+          map[input[i]] = i
+        }
+        console.log(map)
+      }
+      return undefined;
+    }
+    console.log(firstRecurringCharacter2([2,3,4,5,3,4,]))
+
+
+  </script>
 </body>
 </html>
