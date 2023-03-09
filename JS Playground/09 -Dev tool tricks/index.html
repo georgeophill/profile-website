@@ -35,17 +35,43 @@
     console.info("My teeth are yellow")
 
     // Testing
+    const p = document.querySelector('p');
+
     console.assert(1===1, "That is wrong")
 
     // clearing
+    console.clear();
 
     // Viewing DOM Elements
+    console.log(p)
+    console.dir(p)
 
     // Grouping together
+   console.groupCollapsed();
+   console.groupEnd();
 
     // counting
+    console.count('wes');
+    console.count('wes');
+    console.count('steve');
+    console.count('steve');
+    console.count('wes');
+    console.count('wes');
+    console.count('steve');
+    console.count('steve')
+    console.count('wes');
+    console.count('steve')
+    console.count('steve')
+    console.count('steve')
+    console.count('steve')
 
     // timing
+    console.time('fetching data');
+    fetch(`https://api.github.com/users/wesbos`)
+      .then(data => data.json())
+      .then(data => {
+        console.timeEnd('fetching data')
+      });
 
   </script>
 </body>
