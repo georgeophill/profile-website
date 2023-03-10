@@ -174,6 +174,7 @@ const dogs = [{ name: 'Snickers', age: 2 }, { name: 'hugo', age: 8 }];
     this.length++;
     return this;
   }
+
   printList() {
     const array = [];
     let currentNode = this.head;
@@ -186,16 +187,21 @@ const dogs = [{ name: 'Snickers', age: 2 }, { name: 'hugo', age: 8 }];
   insert(index, value){
     //Check for proper parameters;
     if(index >= this.length) {
-      console.log('yes')
       return this.append(value);
     }
     const newNode = {
       value: value,
       next: null,
     };
-    const leader = this.traverseToIndex(index - 1)
+    const leader = this.traverseToIndex(index - 1);
+    const holdingPointer = leader.next;
+    leader.next = newNode;
+    newNode.next = holdingPointer;
+    this.length++;
+    return this.printList
 
   }
+
   traverseToIndex(index) {
     // check for params
     let counter = 0;
@@ -206,10 +212,20 @@ const dogs = [{ name: 'Snickers', age: 2 }, { name: 'hugo', age: 8 }];
     }
     return currentNode
   }
+
+
+  remove(index) {
+    // check for proper params 
+    if(index >)
+  }
 }
 
 const myLinkedList = new LinkedList(10);
 myLinkedList.append(5);
-myLinkedList.append(16);myLinkedList.prepend(1);
+myLinkedList.append(16);
+myLinkedList.prepend(1);
+myLinkedList.printList();
 myLinkedList.insert(2, 99);
-myLinkedList.insert(20, 88);
+myLinkedList.insert(2, 99);
+
+console.log(myLinkedList);
