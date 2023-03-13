@@ -197,11 +197,14 @@ const dogs = [{ name: 'Snickers', age: 2 }, { name: 'hugo', age: 8 }];
     const newNode = {
       value: value,
       next: null,
+      prev: null
     };
     const leader = this.traverseToIndex(index - 1);
-    const holdingPointer = leader.next;
+    const follower = leader.next;
     leader.next = newNode;
-    newNode.next = holdingPointer;
+    newNode.prev = leader;
+    newNode.next = follower;
+    follower.prev = newNode;
     this.length++;
     return this.printList
 
@@ -240,9 +243,9 @@ myLinkedList.insert(2, 99);
 
 console.log(myLinkedList);
 
-var arr = [myLinkedList.val]
-while(myLinkedList.next !== null){
-    myLinkedList = myLinkedList.next;
-    arr.push(myLinkedList.val)
-}
-console.log(arr)
+// var arr = [myLinkedList.val]
+// while(myLinkedList.next !== null){
+//     myLinkedList = myLinkedList.next;
+//     arr.push(myLinkedList.val)
+// }
+// console.log(arr)
