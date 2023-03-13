@@ -214,10 +214,10 @@ const dogs = [{ name: 'Snickers', age: 2 }, { name: 'hugo', age: 8 }];
   }
 
 
-  remove(index) {
-    // check for proper params 
-    if(index >)
-  }
+  // remove(index) {
+  //   // check for proper params
+  //   if(index >)
+  // }
 }
 
 const myLinkedList = new LinkedList(10);
