@@ -3,7 +3,7 @@ const player = document.querySelector('.player');
 const video = player.querySelector('.viewer');
 const progress = player.querySelector('.progress');
 const progressBar = player.querySelector('.progress__filled');
-const fullScreen = player.querySelector('.toggle-fullscreen')
+
 
 const toggle = player.querySelector('.toggle');
 const skipButtons = player.querySelectorAll('[data-skip]');
@@ -41,18 +41,18 @@ function scrub(e) {
   video.currentTime = scrubTime;
 }
 
-function getFullScreenElement(){
-  return document.fullscreenElement
-    || document.webkitFullScreenElement;
-}
+// function getFullScreenElement(){
+//   return document.fullscreenElement
+//     || document.webkitFullScreenElement;
+// }
 
-function toggleFullScreen(){
-  if(getFullScreenElement()) {
-  document.exitFullscreen();
-  } else {
-    document.documentElement.requestFullscreen().catch(console.log);
-  }
-}
+// function toggleFullScreen(){
+//   if(getFullScreenElement()) {
+//   document.exitFullscreen();
+//   } else {
+//     document.documentElement.requestFullscreen().catch(console.log);
+//   }
+// }
 // Hook up the event listener
 
 
@@ -72,6 +72,22 @@ progress.addEventListener('mousemove', (e) => mousedown && scrub(e));
 progress.addEventListener('mousedown', () => true);
 progress.addEventListener('mouseup', () => false);
 
-fullScreen.addEventListener('click', () => {
-  toggleFullScreen();
-});
+// fullScreen.addEventListener('click', () => {
+//   toggleFullScreen();
+// });
+
+function toggleFullScreen(){
+  const elem = document.querySelector('toggle-fullscreen')
+
+  if(!document.fullScreenElement) {
+    elem.requestFullscreen().catch((err) => {
+      alert(
+        `Error opening full screen: ${err.message} (${err.name})`
+      );
+    });
+  } else {
+    document.exitFullScreen();
+  }
+}
+
+player.addEventListener('dblclick', toggleFullScreen);
