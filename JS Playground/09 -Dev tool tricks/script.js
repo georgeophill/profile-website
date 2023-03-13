@@ -145,7 +145,7 @@ const dogs = [{ name: 'Snickers', age: 2 }, { name: 'hugo', age: 8 }];
 
       // console.log(myLinkedList)
 
-      class DoublyLinkedList {
+      class LinkedList {
   constructor(value) {
     this.head = {
       value: value,
@@ -224,15 +224,32 @@ const dogs = [{ name: 'Snickers', age: 2 }, { name: 'hugo', age: 8 }];
 
   remove(index) {
     const leader = this.traverseToIndex(index-1);
+    const follower = this.traverseToIndex(index+1);
     const unwantedNode = leader.next;
+    follower = unwantedNode.prev;
     leader.next = unwantedNode.next;
     this.length--;
     return this.printList();
+  }
 
+// reverse a linked list
+
+  reverse(node) {
+    var prev = null;
+    var current = node;
+    var next = null;
+      while(current != null) {
+        next = current.next;
+        current.next = prev;
+        prev = current;
+        current = next;
+      }
+      node = prev;
+      return this.printList();
   }
 }
 
-const myLinkedList = new DoublyLinkedList(10);
+const myLinkedList = new LinkedList(10);
 myLinkedList.append(5);
 myLinkedList.append(16);
 myLinkedList.prepend(1);
