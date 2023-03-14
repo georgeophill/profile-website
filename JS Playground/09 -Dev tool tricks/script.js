@@ -266,3 +266,29 @@ console.log(myLinkedList);
 //     arr.push(myLinkedList.val)
 // }
 // console.log(arr)
+
+
+arr = [123, -99, 57, 9, 12, 0, 3]
+
+// function min(arr) {
+//   arr.sort((a, b) => a - b);
+//   // return smallest;
+
+// }
+
+// const min = min((a,b) => a - b);
+
+// console.log(min)
+
+// var smallest = arr.reduce((prev,next) => prev>next ? next : prev);
+
+// console.log(smallest)
+
+let firstName = 'claire'
+
+// Write your function here
+function hello(name){
+  return "Hello ${firstName}"
+}
+
+console.log(hello(name))
