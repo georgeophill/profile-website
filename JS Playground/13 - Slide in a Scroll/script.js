@@ -14,3 +14,17 @@ function debounce(func, wait = 20, immediate = true) {
     if (callNow) func.apply(context, args);
   };
 }
+
+const images = document.querySelectorAll('.slide-in');
+
+
+function check1Slide(e) {
+  console.log(window.scrollY)
+  sliderImages.forEach(slideImage => {
+    // const slideInAt =
+  });
+}
+
+// images.forEach(image => image.addEventListener('scroll', check1Slide()))
+
+window.addEventListener('scroll', debounce(check1Slide))
