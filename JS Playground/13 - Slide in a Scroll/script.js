@@ -37,3 +37,13 @@ function checkSlide(e) {
 // images.forEach(image => image.addEventListener('scroll', check1Slide()))
 
 window.addEventListener('scroll', debounce(checkSlide))
+
+
+
+// Stacks and queues
+
+function foo() {
+  foo()
+}
+
+console.log(foo())

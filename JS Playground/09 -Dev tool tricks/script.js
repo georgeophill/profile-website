@@ -284,11 +284,13 @@ arr = [123, -99, 57, 9, 12, 0, 3]
 
 // console.log(smallest)
 
-let firstName = 'claire'
+// let firstName = 'claire'
 
-// Write your function here
-function hello(name){
-  return "Hello ${firstName}"
-}
+// // Write your function here
+// function hello(name){
+//   return "Hello ${firstName}"
+// }
 
-console.log(hello(name))
+// console.log(hello(name))
+
+console.clear();
