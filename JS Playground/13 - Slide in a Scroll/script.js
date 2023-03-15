@@ -20,10 +20,10 @@ const images = document.querySelectorAll('.slide-in');
 
 function checkSlide(e) {
   images.forEach(slideImage => {
-    const slideInAt = (window.scrollY + window.innerHeight) - slideImage.height / 2 ; {
-      // const bottomOfImage = slideImag
-      console.log(slideImage.height)
-    }
+    // half way through the image
+    const slideInAt = (window.scrollY + window.innerHeight) - slideImage.height / 2 ;
+    // botttom of the image
+    const imageBottom = sliderImage.offSetTop + sliderImage.height;
   });
 }
 
